@@ -28,10 +28,6 @@ function verifyJWT(req, res, next) {
     })
 }
 
-app.post('/post', function (req, res) {
-  res.send('POST request to the homepage')
-})
-
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.swund.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
@@ -117,3 +113,4 @@ app.listen(port, () => {
     console.log('Listening to port', port);
 })
 
+console.log('port :>> ', port);
